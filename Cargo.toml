@@ -1,0 +1,16 @@
+[package]
+name = "repro"
+version = "0.1.0"
+edition = "2021"
+
+[package.metadata.maturin]
+name = "repro"
+
+[lib]
+name = "repro"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.23", features = ["extension-module", "generate-import-lib", "abi3-py38"] }
+pyo3-async-runtimes = { version = "0.23", features = ["tokio-runtime"] }
+
